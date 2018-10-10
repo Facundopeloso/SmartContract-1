@@ -38,7 +38,6 @@ contract Tutoria {
     function confirmar(address key) public returns (bool) {
         require(Tutorias[key].idProfesor == msg.sender);
         require(Tutorias[key].isConfirmado == false);
-        require(Tutorias[key].isCancelado == false);
         return Tutorias[key].isConfirmado = true;
     }
     
@@ -53,7 +52,7 @@ contract Tutoria {
         return Tutorias[key].isConfirmado;
     }
     
-    function estaCancelado(address key) public view returns (bool){
+    function estaCancelado(address key) public view returns (bool){ //funcion cancelar
         return Tutorias[key].isCancelado;
     }
     
